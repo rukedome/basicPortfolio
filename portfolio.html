@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./assets/css/portfolio_style.css">
+</head>
+<body>
+    <div class="home container">
+        <header class="main-header">
+            <nav class="nav main-grid">
+                <div>
+                    <a href="#" class="nav-logo">
+                        <img src="./assets/img/nav_logo.svg" alt="logo" />
+                    </a>
+                </div>
+                <div>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="./portfolio.html" class="nav-link active">Portfolio</a></li>
+                        <li class="nav-item"><a href="./about.html" class="nav-link">About</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="title-section">
+            <div class="title">
+                <h1>Portfolio</h1>
+            </div>
+            <div class="sub-title">
+                <p>In magna elit, lacinia ac rutrum quis, egestas sed orci. Duis aliquet laoreet ultricies. Morbi libero
+                    enim,</p>
+                <p>blandit nec euismod eu, commodo at ante. Nulla aliquam velit vitae nibh pharetra maximus. Vestibulum
+                </p>
+                <p>ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+            </div>
+        </div>
+        <div class="tab-container">
+            <button class="tab-button active" onclick="showTab(this, 'tabAll')">All Projects</button>
+            <button class="tab-button" onclick="showTab(this, 'tab1')">At Work</button>
+            <button class="tab-button" onclick="showTab(this, 'tab2')">Personal</button>
+        </div>
+        <div class="spaceLine-50"></div>
+        <div id="tab1" class="portfolio-container tab-content">
+            <section class="section">
+                <div class="portfolio-template">
+                    <div class="image-item">
+                        <div>
+                            <img class="image" src="./assets/img/에버리_오버뷰.png">
+                        </div>
+                        <div class="image-text-template">
+                            <h3 class="image-title">Title1</h3>
+                            <p class="description">Description1</p>
+                        </div>
+                    </div>
+                    <div class="image-item">
+                        <div>
+                            <img class="image" src="./assets/img/011-Display XDR.svg">
+                        </div>
+                        <div class="image-text-template">
+                            <h3 class="image-title">Title2</h3>
+                            <p class="description">Description2</p>
+                        </div>
+                    </div>
+                    <div class="image-item">
+                        <div>
+                            <img class="image" src="./assets/img/Mask group2.png">
+                        </div>
+                        <div class="image-text-template">
+                            <h3 class="image-title">Title3</h3>
+                            <p class="description">Description3</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="tab2" class="portfolio-container tab-content">
+            <section class="section">
+                <div class="portfolio-template">
+                    <div class="image-item">
+                        <div>
+                            <img class="image" src="./assets/img/011-Display XDR.svg">
+                        </div>
+                        <div class="image-text-template">
+                            <h3 class="image-title">Title1</h3>
+                            <p class="description">Description1</p>
+                        </div>
+                    </div>
+                    <div class="image-item">
+                        <div>
+                            <img class="image" src="./assets/img/Mask group2.png">
+                        </div>
+                        <div class="image-text-template">
+                            <h3 class="image-title">Title2</h3>
+                            <p class="description">Description2</p>
+                        </div>
+                    </div>
+                    <div class="image-item">
+                        <div>
+                            <img class="image" src="./assets/img/에버리_오버뷰.png">
+                        </div>
+                        <div class="image-text-template">
+                            <h3 class="image-title">Title3</h3>
+                            <p class="description">Description3</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabContents = document.querySelectorAll('.portfolio-container');
+            tabContents.forEach(tab => tab.classList.add('active'));
+        });
+
+        function showTab(obj, tabId) {
+            const tabBtn = document.querySelectorAll('.tab-button');
+            tabBtn.forEach(tab => tab.classList.remove('active'));
+
+            const tabContents = document.querySelectorAll('.portfolio-container');
+            tabContents.forEach(tab => tab.classList.remove('active'));
+            obj.classList.add('active');
+
+            if (tabId === 'tabAll'){
+                tabContents.forEach(tab => tab.classList.add('active'));
+            } else {
+                const selectedTab = document.getElementById(tabId);
+                selectedTab.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
